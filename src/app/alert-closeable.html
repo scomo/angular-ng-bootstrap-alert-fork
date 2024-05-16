@@ -1,0 +1,12 @@
+@for (alert of alerts; track alert) {
+<ngb-alert [type]="alert.type" (closed)="close(alert)"
+  >{{ alert.message }}</ngb-alert
+>
+}
+<ng-container *ngFor="let alert_local of alerts; ">
+  <ngb-alert [type]="alert_local.type" (closed)="close(alert_local)"
+    >{{ alert_local.message }}</ngb-alert
+  >
+</ng-container>
+
+<button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
